@@ -26,7 +26,7 @@ class OnBoardingScreen extends StatelessWidget {
             clipper: WaveClipper(),
             child: Container(
               height: MediaQuery.of(context).size.height * 0.6,
-              color: Colors.deepPurple,
+              color: ColorManager.darkGreen,
             ),
           ),
           Padding(
