@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'color_manager.dart';
+import 'wave_clipper.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -16,7 +17,7 @@ class OnBoardingScreen extends StatelessWidget {
             alignment: Alignment.topCenter,
             child: Image(
               width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.6,
+              height: MediaQuery.of(context).size.height * 0.7,
               image: const AssetImage('assets/splash.png'),
               fit: BoxFit.cover,
             ),
@@ -24,8 +25,8 @@ class OnBoardingScreen extends StatelessWidget {
           ClipPath(
             clipper: WaveClipper(),
             child: Container(
-              height: MediaQuery.of(context).size.height * 0.5,
-              color: ColorManager.darkGreen,
+              height: MediaQuery.of(context).size.height * 0.6,
+              color: Colors.deepPurple,
             ),
           ),
           Padding(
@@ -55,39 +56,4 @@ class OnBoardingScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-class WaveClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    var path = Path();
-    path.lineTo(0, 20); // Start a bit down from the top left
-
-    // Create the "S" curve
-    var firstStart = Offset(size.width * 0.2, 0);
-    var firstEnd = Offset(size.width * 0.5, 30);
-    path.quadraticBezierTo(
-      firstStart.dx,
-      firstStart.dy,
-      firstEnd.dx,
-      firstEnd.dy,
-    );
-
-    var secondStart = Offset(size.width * 0.8, 60);
-    var secondEnd = Offset(size.width, 20);
-    path.quadraticBezierTo(
-      secondStart.dx,
-      secondStart.dy,
-      secondEnd.dx,
-      secondEnd.dy,
-    );
-
-    path.lineTo(size.width, size.height); // Move to bottom right
-    path.lineTo(0, size.height); // Move to bottom left
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
