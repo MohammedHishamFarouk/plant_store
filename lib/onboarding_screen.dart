@@ -34,6 +34,7 @@ class OnBoardingScreen extends StatelessWidget {
             padding: const EdgeInsets.all(68.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
+              spacing: 16,
               children: [
                 RichText(
                   text: const TextSpan(
@@ -44,22 +45,25 @@ class OnBoardingScreen extends StatelessWidget {
                         style: TextStyle(color: ColorManager.lightGreen100),
                       ),
                       TextSpan(text: '\nsave our planet'),
-                      TextSpan(
-                        text: '\nPlant a tree and help us to \ncure our planet',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal,
-                          color: ColorManager.lightGreen100,
-                        ),
-                      ),
                     ],
                     style: TextStyle(
                       fontSize: 24,
-                      fontWeight: FontWeight.bold,
                       color: Colors.white,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   textAlign: TextAlign.center,
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 16.0),
+                  child: Text(
+                    'Plant a tree and help us to \ncure our planet',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: ColorManager.lightGreen100,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
                 FilledButton(
                   onPressed: () => Navigator.pushReplacement(
@@ -75,11 +79,7 @@ class OnBoardingScreen extends StatelessWidget {
                   ),
                   child: const Text(
                     'Plant a tree',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                    style: TextStyle(fontSize: 18),
                   ),
                 ),
               ],
