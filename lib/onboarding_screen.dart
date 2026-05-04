@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'color_manager.dart';
+import 'home_screen.dart';
 import 'wave_clipper.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -34,9 +35,37 @@ class OnBoardingScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                const Text('Plant a tree and help us to \ncure our planet'),
+                RichText(
+                  text: const TextSpan(
+                    children: [
+                      TextSpan(text: 'Plant a tree '),
+                      TextSpan(
+                        text: '&',
+                        style: TextStyle(color: ColorManager.lightGreen100),
+                      ),
+                      TextSpan(text: '\nsave our planet'),
+                      TextSpan(
+                        text: '\nPlant a tree and help us to \ncure our planet',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal,
+                          color: ColorManager.lightGreen100,
+                        ),
+                      ),
+                    ],
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
                 FilledButton(
-                  onPressed: () {},
+                  onPressed: () => Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomeScreen()),
+                  ),
                   style: FilledButton.styleFrom(
                     minimumSize: const Size(180, 60),
                     backgroundColor: ColorManager.lightGreen,
@@ -46,7 +75,11 @@ class OnBoardingScreen extends StatelessWidget {
                   ),
                   child: const Text(
                     'Plant a tree',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],
