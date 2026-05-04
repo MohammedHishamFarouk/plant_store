@@ -79,9 +79,9 @@ flutter:
      - family: lexend
        fonts:
          - asset: assets/fonts/Lexend-SemiBold.ttf
-           weight: 200
+           weight: 600
          - asset: assets/fonts/Lexend-Medium.ttf
-           weight: 100
+           weight: 500
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
