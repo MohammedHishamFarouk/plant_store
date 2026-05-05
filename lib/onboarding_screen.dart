@@ -49,6 +49,7 @@ class OnBoardingScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 24,
                       color: Colors.white,
+                      fontFamily: 'lexend',
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -60,7 +61,7 @@ class OnBoardingScreen extends StatelessWidget {
                     'Plant a tree and help us to \ncure our planet',
                     style: TextStyle(
                       fontSize: 16,
-                      color: ColorManager.lightGreen100,
+                      color: ColorManager.lightGreen200,
                     ),
                     textAlign: TextAlign.center,
                   ),
