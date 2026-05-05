@@ -40,6 +40,10 @@ class HomeScreen extends StatelessWidget {
                   color: ColorManager.lightGreen200,
                 ),
               ),
+              Text(
+                'Help Us To Save Our Mother Earth',
+                style: TextStyle(fontSize: 18, color: ColorManager.darkGreen),
+              ),
             ],
           ),
         ),
