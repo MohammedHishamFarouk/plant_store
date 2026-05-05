@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'onboarding_screen.dart';
+import 'package:plant_store/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
         fontFamily: 'lexend',
         filledButtonTheme: const FilledButtonThemeData(
           style: ButtonStyle(
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const OnBoardingScreen(),
+      home: const HomeScreen(),
     );
   }
 }
